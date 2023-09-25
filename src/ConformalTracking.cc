@@ -593,6 +593,31 @@ void ConformalTracking::processEvent(LCEvent* evt) {
   UKDTree          nearestNeighbours = nullptr;
 
   for (auto const& parameters : _stepParameters) {
+
+    std::cout << "Parameters : " << std::endl;
+    for (auto& elem : parameters._collections) {
+          std::cout << " " << elem;
+    }
+        std::cout << std::endl;
+        std::cout << "maxCellAngle " << parameters._maxCellAngle << std::endl;
+        std::cout << "maxCellAngleRZ " << parameters._maxCellAngleRZ << std::endl;
+        std::cout << "chi2cut " << parameters._chi2cut << std::endl;
+        std::cout << "minClustersOnTrack " << parameters._minClustersOnTrack << std::endl;
+        std::cout << "maxDistance " << parameters._maxDistance << std::endl;
+        std::cout << "maxSlopeZ " << parameters._maxSlopeZ << std::endl;
+        std::cout << "highPTcut " << parameters._highPTcut << std::endl;
+        std::cout << "highPTfit " << parameters._highPTfit << std::endl;
+        std::cout << "onlyZSchi2cut " << parameters._onlyZSchi2cut << std::endl;
+        std::cout << "radialSearch " << parameters._radialSearch << std::endl;
+        std::cout << "vertexToTracker " << parameters._vertexToTracker << std::endl;
+        std::cout << "kalmanFitForward " << parameters._kalmanFitForward << std::endl;
+        std::cout << "step " << parameters._step << std::endl;
+        std::cout << "combine " << parameters._combine << std::endl;
+        std::cout << "build " << parameters._build << std::endl;
+        std::cout << "extend " << parameters._extend << std::endl;
+        std::cout << "sortTracks " << parameters._sortTracks << std::endl;
+        std::cout << "tightenStep " << parameters._tightenStep << std::endl;
+
     runStep(kdClusters, nearestNeighbours, conformalTracks, collectionClusters, parameters);
     streamlog_out(DEBUG9) << "STEP " << parameters._step << ": nr tracks = " << conformalTracks.size() << std::endl;
     if (streamlog_level(DEBUG9)) {
