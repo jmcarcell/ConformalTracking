@@ -350,7 +350,7 @@ void ConformalTracking::processEvent(LCEvent* evt) {
     getCollection(trackerHitCollection, m_inputTrackerHitCollections[collection], evt);
     if (trackerHitCollection == 0)
       continue;
-    streamlog_out(DEBUG9) << "Collection " << m_inputTrackerHitCollections[collection] << " contains "
+    streamlog_out(MESSAGE) << "Collection " << m_inputTrackerHitCollections[collection] << " contains "
                           << trackerHitCollection->getNumberOfElements() << " hits" << std::endl;
     trackerHitCollections.push_back(trackerHitCollection);
 
