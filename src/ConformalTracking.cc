@@ -619,13 +619,13 @@ void ConformalTracking::processEvent(LCEvent* evt) {
         streamlog_out(MESSAGE) << "tightenStep " << parameters._tightenStep << std::endl;
 
     runStep(kdClusters, nearestNeighbours, conformalTracks, collectionClusters, parameters);
-    streamlog_out(DEBUG9) << "STEP " << parameters._step << ": nr tracks = " << conformalTracks.size() << std::endl;
-    if (streamlog_level(DEBUG9)) {
+    streamlog_out(MESSAGE) << "STEP " << parameters._step << ": nr tracks = " << conformalTracks.size() << std::endl;
+    if (streamlog_level(MESSAGE)) {
       for (auto const& confTrack : conformalTracks) {
-        streamlog_out(DEBUG9) << "- Track " << &confTrack << " has " << confTrack->m_clusters.size() << " hits" << std::endl;
+        streamlog_out(MESSAGE) << "- Track " << &confTrack << " has " << confTrack->m_clusters.size() << " hits" << std::endl;
         for (unsigned int ht = 0; ht < confTrack->m_clusters.size(); ht++) {
           SKDCluster const& kdhit = confTrack->m_clusters.at(ht);
-          streamlog_out(DEBUG9) << "-- Hit " << ht << ": [x,y,z] = [" << kdhit->getX() << ", " << kdhit->getY() << ", "
+          streamlog_out(MESSAGE) << "-- Hit " << ht << ": [x,y,z] = [" << kdhit->getX() << ", " << kdhit->getY() << ", "
                                 << kdhit->getZ() << "]" << std::endl;
         }
       }
