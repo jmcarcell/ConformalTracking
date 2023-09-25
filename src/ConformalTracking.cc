@@ -2997,6 +2997,10 @@ void ConformalTracking::fillCollectionIndexVectors() {
 
 void ConformalTracking::runStep(SharedKDClusters& kdClusters, UKDTree& nearestNeighbours, UniqueKDTracks& conformalTracks,
                                 std::map<int, SharedKDClusters> const& collectionClusters, Parameters const& parameters) {
+  streamlog_out(MESSAGE) << "Inside runStep" << std::endl;
+  for (auto& [k, v] : collectionClusters) {
+    streamlog_out(MESSAGE) << "With key k = " << k << " and size = " << v.size() << std::endl;
+  }
   auto stopwatch = TStopwatch();
   stopwatch.Start(false);
 
