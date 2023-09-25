@@ -594,29 +594,29 @@ void ConformalTracking::processEvent(LCEvent* evt) {
 
   for (auto const& parameters : _stepParameters) {
 
-    std::cout << "Parameters : " << std::endl;
+    streamlog(MESSAGE) << "Parameters : " << std::endl;
     for (auto& elem : parameters._collections) {
-          std::cout << " " << elem;
+          streamlog(MESSAGE) << " " << elem;
     }
-        std::cout << std::endl;
-        std::cout << "maxCellAngle " << parameters._maxCellAngle << std::endl;
-        std::cout << "maxCellAngleRZ " << parameters._maxCellAngleRZ << std::endl;
-        std::cout << "chi2cut " << parameters._chi2cut << std::endl;
-        std::cout << "minClustersOnTrack " << parameters._minClustersOnTrack << std::endl;
-        std::cout << "maxDistance " << parameters._maxDistance << std::endl;
-        std::cout << "maxSlopeZ " << parameters._maxSlopeZ << std::endl;
-        std::cout << "highPTcut " << parameters._highPTcut << std::endl;
-        std::cout << "highPTfit " << parameters._highPTfit << std::endl;
-        std::cout << "onlyZSchi2cut " << parameters._onlyZSchi2cut << std::endl;
-        std::cout << "radialSearch " << parameters._radialSearch << std::endl;
-        std::cout << "vertexToTracker " << parameters._vertexToTracker << std::endl;
-        std::cout << "kalmanFitForward " << parameters._kalmanFitForward << std::endl;
-        std::cout << "step " << parameters._step << std::endl;
-        std::cout << "combine " << parameters._combine << std::endl;
-        std::cout << "build " << parameters._build << std::endl;
-        std::cout << "extend " << parameters._extend << std::endl;
-        std::cout << "sortTracks " << parameters._sortTracks << std::endl;
-        std::cout << "tightenStep " << parameters._tightenStep << std::endl;
+        streamlog(MESSAGE) << std::endl;
+        streamlog(MESSAGE) << "maxCellAngle " << parameters._maxCellAngle << std::endl;
+        streamlog(MESSAGE) << "maxCellAngleRZ " << parameters._maxCellAngleRZ << std::endl;
+        streamlog(MESSAGE) << "chi2cut " << parameters._chi2cut << std::endl;
+        streamlog(MESSAGE) << "minClustersOnTrack " << parameters._minClustersOnTrack << std::endl;
+        streamlog(MESSAGE) << "maxDistance " << parameters._maxDistance << std::endl;
+        streamlog(MESSAGE) << "maxSlopeZ " << parameters._maxSlopeZ << std::endl;
+        streamlog(MESSAGE) << "highPTcut " << parameters._highPTcut << std::endl;
+        streamlog(MESSAGE) << "highPTfit " << parameters._highPTfit << std::endl;
+        streamlog(MESSAGE) << "onlyZSchi2cut " << parameters._onlyZSchi2cut << std::endl;
+        streamlog(MESSAGE) << "radialSearch " << parameters._radialSearch << std::endl;
+        streamlog(MESSAGE) << "vertexToTracker " << parameters._vertexToTracker << std::endl;
+        streamlog(MESSAGE) << "kalmanFitForward " << parameters._kalmanFitForward << std::endl;
+        streamlog(MESSAGE) << "step " << parameters._step << std::endl;
+        streamlog(MESSAGE) << "combine " << parameters._combine << std::endl;
+        streamlog(MESSAGE) << "build " << parameters._build << std::endl;
+        streamlog(MESSAGE) << "extend " << parameters._extend << std::endl;
+        streamlog(MESSAGE) << "sortTracks " << parameters._sortTracks << std::endl;
+        streamlog(MESSAGE) << "tightenStep " << parameters._tightenStep << std::endl;
 
     runStep(kdClusters, nearestNeighbours, conformalTracks, collectionClusters, parameters);
     streamlog_out(DEBUG9) << "STEP " << parameters._step << ": nr tracks = " << conformalTracks.size() << std::endl;
